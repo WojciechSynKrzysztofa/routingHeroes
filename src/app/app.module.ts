@@ -1,18 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
 
+import { AppComponent }     from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+
+
+// tslint:disable-next-line: import-spacing
+import { HeroListComponent }     from './heroes/hero-list/hero-list.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { HeroesModule } from './heroes/heroes.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HeroesModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    CrisisListComponent,
+    NotFoundComponent
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
